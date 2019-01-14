@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when <Comp /> renders should render some markup and a component 1`] = `"<div style=\\"height:100%\\"><h1>You haven&#x27;t clicked yet...</h1><div>Test Component</div></div>"`;
+
+exports[`when <Comp /> renders should render something different on click 1`] = `"<div style=\\"height:100%\\"><h1>Clickity click click yo!</h1></div>"`;

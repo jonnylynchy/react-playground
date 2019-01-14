@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when <App /> renders should render <Comp /> with a passed message using .prop() 1`] = `"<h1>Wow, that was easy.</h1>"`;
+
+exports[`when <App /> renders should render <Comp /> with a passed message using .renderProp() 1`] = `"<h1>foo foo magoo</h1>"`;
