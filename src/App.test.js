@@ -15,7 +15,7 @@ describe('when <App /> renders', () => {
 			wrapper.find(Comp).prop('render')({ message: "Wow, that was easy." })
 		);
 
-		console.log('Using .prop("render"):\n', compWrapper.html())
+		console.log('Using .prop("render"):\n', compWrapper.debug())
 
 		// works
 		expect(compWrapper.text()).toEqual("Wow, that was easy.");
@@ -29,7 +29,7 @@ describe('when <App /> renders', () => {
 			.find(Comp)
 			.renderProp('render')({ message: "foo foo magoo" });
 		
-		console.log('Using .renderProp():\n', betterWrapper.html());
+		console.log('Using .renderProp():\n', betterWrapper.debug());
 
 		expect(betterWrapper.html()).toMatchSnapshot();
 	});

@@ -19,7 +19,7 @@ describe('when <Comp /> renders', () => {
 
 		const wrapper = shallow(<Comp render={renderFunc} />);
 
-		expect(wrapper.html()).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 	it('should render something different on click', () => {
@@ -31,7 +31,7 @@ describe('when <Comp /> renders', () => {
 		const wrapper = shallow(<Comp render={renderFunc} />);
 		wrapper.find('div').simulate('click');
 
-		expect(wrapper.html()).toMatchSnapshot();
+		expect(wrapper.debug()).toMatchSnapshot();
 	});
 
 });
