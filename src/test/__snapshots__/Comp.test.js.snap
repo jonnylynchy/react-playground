@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`when <Comp /> renders should match json serialized snapshot 1`] = `
+<div
+  onClick={[Function]}
+  style={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <h1>
+    You haven't clicked yet...
+  </h1>
+  <TestComp />
+</div>
+`;
+
 exports[`when <Comp /> renders should render some markup and a component 1`] = `
 "<div style={{...}} onClick={[Function]}>
   <h1>

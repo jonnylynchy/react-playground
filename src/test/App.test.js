@@ -1,11 +1,8 @@
 import React from 'react';
-import { shallow, render, mount, configure, renderProp } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
-import App from './App';
-import Comp from './Comp';
-
-configure({ adapter: new Adapter() });
+import App from '../App';
+import Comp from '../Comp';
 
 describe('when <App /> renders', () => {
 	// One common solution is to instantiate another wrapper for the inner component:
@@ -32,5 +29,13 @@ describe('when <App /> renders', () => {
 		console.log('Using .renderProp():\n', betterWrapper.debug());
 
 		expect(betterWrapper.html()).toMatchSnapshot();
+	});
+
+	it('should match json serialized snapshot', () => {
+		const betterWrapper = shallow(<App />)
+			.find(Comp)
+			.renderProp('render')({ message: "foo foo magoo" });
+		
+		expect(betterWrapper).toMatchSnapshot();
 	});
 });

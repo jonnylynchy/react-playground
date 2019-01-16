@@ -1,10 +1,7 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 
-import Comp from './Comp';
-
-configure({ adapter: new Adapter() });
+import Comp from '../Comp';
 
 const TestComp = () => <div>Test Component</div>;
 
@@ -32,6 +29,18 @@ describe('when <Comp /> renders', () => {
 		wrapper.find('div').simulate('click');
 
 		expect(wrapper.debug()).toMatchSnapshot();
+	});
+
+	it('should match json serialized snapshot', () => {
+		const renderFunc = state =>
+			<React.Fragment>
+				<h1>{state.message}</h1>
+				<TestComp />
+			</React.Fragment>;
+
+		const wrapper = shallow(<Comp render={renderFunc} />);
+
+		expect(wrapper).toMatchSnapshot();
 	});
 
 });
